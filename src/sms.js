@@ -10,14 +10,14 @@ const url = 'http://sms.aliyuncs.com/';
  * @param  unsign param
  * @return query after sign
  */
-me.signature = (param) => {
+me.signature = (param, accessKeySecret) => {
   let signStr = [];
   for (let i in param) {
     signStr.push(`${encodeURIComponent(i)}=${encodeURIComponent(param[i])}`);
   }
   signStr = signStr.join('&');
   signStr = 'POST&%2F&' + encodeURIComponent(signStr);
-  const sign = crypto.createHmac("sha1", config.accessKeySecret + '&').update(signStr).digest('base64');
+  const sign = crypto.createHmac("sha1", accessKeySecret + '&').update(signStr).digest('base64');
   const signature = encodeURIComponent(sign);
   let body = [`Signature=${signature}`];
   for (let key in param) {
@@ -33,7 +33,7 @@ me.signature = (param) => {
  */
 me.checkConfig = (config) => {
   let errArr = [];
-  for(let key of config){
+  for(let key in config){
     if(typeof config[key] === 'undefined'){
       errArr.push(`${key} Missing`);
     }
@@ -69,7 +69,7 @@ exports.send = (config) => {
   };
   return me.checkConfig(param)
   .then((result) => {
-    let body = me.signature(result);  
+    let body = me.signature(result, config.accessKeySecret);  
     return new Promise((resolve, reject) => {
       request({
         headers: {
