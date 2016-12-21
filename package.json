@@ -1,0 +1,24 @@
+{
+  "name": "aliyun-sms",
+  "version": "1.0.0",
+  "description": "Aliyun SMS Service",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scarletmu/aliyun-sms.git"
+  },
+  "keywords": [
+    "SMS"
+  ],
+  "author": "ScarletMu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scarletmu/aliyun-sms/issues"
+  },
+  "homepage": "https://github.com/scarletmu/aliyun-sms#readme",
+  "dependencies": {
+    "crypto": "^0.0.3",
+    "request": "^2.79.0"
+  }
+}
