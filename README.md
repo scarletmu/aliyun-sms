@@ -3,13 +3,13 @@ A Simple [Aliyun SMS Service](https://help.aliyun.com/product/44282.html) Servic
 
 ## How to install
 ```
-npm install aliyun-sms
+npm install aliyunsms
 ```
 
 ## Usage
 [Detail param document](https://help.aliyun.com/document_detail/44362.html?spm=5176.doc44364.6.567.e46Go5)
 ```javascript
-const sms = require('aliyun-sms');
+const sms = require('aliyunsms');
 
 /**
  * Init Config, All value is required

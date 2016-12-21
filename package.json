@@ -1,5 +1,5 @@
 {
-  "name": "aliyun-sms",
+  "name": "aliyunsms",
   "version": "1.0.0",
   "description": "Aliyun SMS Service",
   "main": "index.js",
