@@ -1,17 +1,20 @@
 const sms = require(".");
 const assert = require("assert");
+const config = require('./config');
 
 const config = {
-  accessKeyID       : '',
-  accessKeySecret   : '',
-  paramString       : {},
-  recNum            : [''],
-  signName          : '',
-  templateCode      : '',
+  accessKeyID       : config.accessKeyID,
+  accessKeySecret   : config.accessKeySecret,
+  paramString       : {code: '123456', duration: '1'},
+  recNum            : ['18612341234'],
+  signName          : config.signName,
+  templateCode      : config.templateCode,
 };
 
-sms(config, (err, body) => {
-  assert.ok(!err);
-  body = JSON.parse(body);
-  assert.ok(body.hasOwnProperty('Model'));
-});
+sms.send(config)
+.then((data) => {
+  console.log(data);
+})
+.catch((err) => {
+  console.error(err);
+})
