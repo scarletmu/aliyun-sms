@@ -11,14 +11,13 @@
   "keywords": [
     "SMS"
   ],
-  "author": "ScarletMu",
+  "author": "scarletmu",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/scarletmu/aliyun-sms/issues"
   },
   "homepage": "https://github.com/scarletmu/aliyun-sms#readme",
   "dependencies": {
-    "crypto": "^0.0.3",
     "request": "^2.79.0"
   }
 }
