@@ -1,9 +1,14 @@
 # aliyun-sms
 A Simple [Aliyun SMS Service](https://help.aliyun.com/product/44282.html) Service middleware, Based on Promise
 
+## How to install
+```
+npm install aliyun-sms
+```
+
 ## Usage
 [Detail param document](https://help.aliyun.com/document_detail/44362.html?spm=5176.doc44364.6.567.e46Go5)
-```
+```javascript
 const sms = require('aliyun-sms');
 
 /**
